@@ -32,7 +32,6 @@ STYLEPATH               ----->           样式路径常量
 
 
 
-
 /* 模板输出变量功能 */
 <{$STYLEPATH}>  		----->			 存放静态样式(css,js,images)
 										 存放路径 ：./View/style/.......
