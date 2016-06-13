@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7"/>
+	<link rel="stylesheet" href="<{$STYLEPATH}>/admin/css/style.css">
+	<link rel="stylesheet" href="<{$STYLEPATH}>/admin/css/style_adm.css">
+	<link rel="stylesheet" href="<{$STYLEPATH}>/admin/css/stylet.css">
+	<script type="text/javascript" src="<{$STYLEPATH}>/admin/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<{$STYLEPATH}>/admin/js/main.js"></script>
+	<script type="text/javascript" src="<{$STYLEPATH}>/admin/js/common.js"></script>
+</head>
+<body>
+
+</head>
+<body class="bodybja">
+<div id="herder" class="m-box-bj headbj">
+	<div id="top" class="m-box headbj">
+    	<div class="head_top">
+            <div class="logobar fl">
+                <h1><a href="{lanrain::U('User/Index/index')}"><img src="<{$STYLEPATH}>/admin/images/logo_admin.jpg" /></a></h1>
+                <h3 class="f_c">企业系统</h3>
+            </div>
+            <div class="wel_adm fr">
+                <span class="f_a">您好，</span>
+                <span class="f_a shux">|</span>
+                <span><a href="javascript:void(0)" class="f_b" onclick="Javascript:window.open('{lanrain::U('System/Admin/logout')}')">安全退出</a></span>
+            </div>
+        </div>
+        <ul class="head_bot">
+        	<{foreach from=$topNavData item=$vo_topNavData}>
+				<li>
+					<a href="./index.php?m=<{$vo_topNavData.m}>&a=<{$vo_topNavData.a}>" class="f_white <{if $vo_topNavData.m|lower eq $smarty.get.m|lower}> active <{/if}>"><{$vo_topNavData.name}></a>
+				</li>
+			<{/foreach}>
+        </ul>
+
+	</div>
+</div>
+<div id="wrapper">
+	<div id="Frame" class="contbox">
+		<div id="nav" class="cboxTop">
+			<span class="big f_d">
+				基础设置
+			</span>
+			
+			<span class="sml f_d">
+            	
+			</span>
+		</div>
+		<div id="floatline"></div>
+		<div class="dib">
+			<dl id="Menu" class="contLeft fl">
+				<{if $topChildNavData neq ''}>
+				<{foreach from=$topChildNavData item=$vo_topChildNavData}>
+					<dd>
+						<h3 class="f_e snh">
+							<!-- 
+							<i>
+								<img src="<{$STYLEPATH}>/admin/images/icon_c_0<?php echo $key+1; ?>.gif" />
+							</i>
+							 -->
+							 
+							<span>
+								<a href="index.php?m=<{$vo_topChildNavData.m}>&a=<{$vo_topChildNavData.a}>">
+									<{$vo_topChildNavData.name}>
+								</a>
+							</span>
+
+						</h3>
+						<{if $vo_topChildNavData.threeNav neq ''}>
+						<ul style="display: block;">
+							
+							<{foreach from=$vo_topChildNavData.threeNav item=$vo_topThreeNavData}>
+								<li><a href="index.php?m=<{$vo_topThreeNavData.m}>&a=<{$vo_topThreeNavData.a}>" class="current"><{$vo_topThreeNavData.name}></a></li>		
+							<{/foreach}>
+							
+						</ul>
+						<{/if}>
+					</dd>
+					<{/foreach}>
+					<{/if}>
+				</if>			
+			</dl>

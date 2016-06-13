@@ -1,0 +1,35 @@
+		</div>
+	</div>
+</div>
+<!--底部-->
+<div style=" clear:both"></div>
+<div class="m-box-bj fot_bj">
+	<div class="m-box fot_bj fot_adm">
+		<p class="f_white">Copyright © 2012-2014 <a href="http://www.gzlinker.com" target="_blank" class="f_white">mp.lkweixin.com</a> All Right Reserved</p>
+	</div>
+</div>
+
+<!-- js -->
+<script type="text/javascript">
+function selectall(name) {
+	var checkItems=$('.cbitem');
+	var ches = document.getElementById('check_box').checked;
+	if (ches == false) {
+		$.each(checkItems, function(i,val){
+			val.checked=false;
+		});
+
+	} else {
+		$.each(checkItems, function(i,val){
+			val.checked=true;
+		});
+	}
+}
+
+function delall(){
+	if(confirm('确定删除吗'))
+		{$('#info').submit()}
+}
+</script>
+</body>
+</html>
